@@ -10,21 +10,7 @@
     margin: 0 auto;
 }
 
-.nav {
-    grid-area: n;
-    background-color: brown;
-}
 
-.header {
-    grid-area: h;
-    background-color: aqua;
-}
 
-.header img{
-    width: 150px;
-}
 
-.content {
-    grid-area: c;
-    background-color: blueviolet;
-}
+

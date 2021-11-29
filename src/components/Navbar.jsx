@@ -1,20 +1,23 @@
+import s from "./Navbar.module.css"
+
+
 const Navbar = () => {
     return (
-        <nav className={'nav'}>
-            <div>
-                <a>Profile</a>
+        <nav className={s.nav}>
+            <div className={s.item}>
+                <a href={'#s'}>Profile</a>
             </div>
-            <div>
-                <a>Messages</a>
+            <div className={s.item}>
+                <a href={'#s'}>Messages</a>
             </div>
-            <div>
-                <a>News</a>
+            <div className={s.item}>
+                <a href={'#s'}>News</a>
             </div>
-            <div>
-                <a>Music</a>
+            <div className={s.item}>
+                <a href={'#s'}>Music</a>
             </div>
-            <div>
-                <a>Settings</a>
+            <div className={s.item}>
+                <a href={'#s'}>Settings</a>
             </div>
         </nav>
     );
