@@ -5,14 +5,24 @@
 
 .dialogsItems {
     padding: 10px;
+    font-size: 23px;
+
 }
 
-.dialogsItems .active {
+.dialog a.activeLink  {
     color: #bbbb2e;
 }
 
-.dialog {
+.dialogsItems img {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
 
+}
+
+.dialog a{
+    text-decoration: none;
+    color: white;
 }
 
 .messages {
