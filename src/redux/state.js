@@ -1,3 +1,6 @@
+import {renderEntireTree} from "../render";
+
+
 let state = {
     profilePage: {
         postsData: [
@@ -15,8 +18,9 @@ let state = {
             },
             {
                 id: 2,
-                name: 'Hristina',
-                avatar: <img src={'https://birds-piggies.ru/uploads/posts/2016-12/1482931343_avatarki-angry-birds-1.jpg'}/>
+                name: 'Christina',
+                avatar: <img
+                    src={'https://birds-piggies.ru/uploads/posts/2016-12/1482931343_avatarki-angry-birds-1.jpg'}/>
             },
             {
                 id: 3,
@@ -36,6 +40,25 @@ let state = {
             {message: 'Yo'},
         ]
     }
+
 };
+
+export let addPost = (postingTextMessage) => {
+    let newPost = {
+        id: 3,
+        message: postingTextMessage,
+        likesCount: 0,
+    };
+    state.profilePage.postsData.push(newPost)
+    renderEntireTree(state);
+}
+
+export let addMessage = (addMessage) => {
+    let newMessage = {
+        message: addMessage,
+    }
+    state.dialogsPage.messageData.push(newMessage)
+    renderEntireTree(state);
+}
 
 export default state;

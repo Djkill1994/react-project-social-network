@@ -1,13 +1,14 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
+
 }
 
 .dialogsItems {
     padding: 10px;
     font-size: 23px;
-
 }
+
 
 .dialog a.activeLink  {
     color: #bbbb2e;
@@ -33,5 +34,10 @@
 
 }
 
-
-
+.inputMessage{
+    padding-top: 50px;
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+    gap: 10px;
+}
