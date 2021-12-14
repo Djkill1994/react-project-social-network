@@ -7,6 +7,7 @@ let state = {
             {id: 1, message: 'Hi, how are you?', likesCount: 3},
             {id: 2, message: 'It\'s my first post', likesCount: 14}
         ],
+        newPostText: 'Adding Texts',
     },
     dialogsPage: {
         dialogData: [
@@ -38,26 +39,38 @@ let state = {
             {message: 'Hello World'},
             {message: 'React it`s cool'},
             {message: 'Yo'},
-        ]
-    }
+        ],
+        newMessageText: 'Adding Texts',
+    },
 
 };
-
-export let addPost = (postingTextMessage) => {
+export let addPost = () => {
     let newPost = {
         id: 3,
-        message: postingTextMessage,
+        message: state.profilePage.newPostText,
         likesCount: 0,
     };
-    state.profilePage.postsData.push(newPost)
+    state.profilePage.postsData.push(newPost);
+    state.profilePage.newPostText = '';
     renderEntireTree(state);
 }
 
-export let addMessage = (addMessage) => {
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText
+    renderEntireTree(state);
+}
+
+export let addMessage = () => {
     let newMessage = {
-        message: addMessage,
-    }
-    state.dialogsPage.messageData.push(newMessage)
+        message: state.dialogsPage.newMessageText,
+    };
+    state.dialogsPage.messageData.push(newMessage);
+    state.dialogsPage.newMessageText = '';
+    renderEntireTree(state);
+}
+
+export let updateNewMessageText = (newText) => {
+    state.dialogsPage.newMessageText = newText;
     renderEntireTree(state);
 }
 
