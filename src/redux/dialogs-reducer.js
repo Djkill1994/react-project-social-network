@@ -1,5 +1,5 @@
 const ADD_MESSAGE = 'ADD-MESSAGE'
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT'
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY'
 
 
 let initialState = {
@@ -14,7 +14,7 @@ let initialState = {
             id: 2,
             name: 'Christina',
             avatar: <img
-                src={'https://birds-piggies.ru/uploads/posts/2016-12/1482931343_avatarki-angry-birds-1.jpg'}/>
+                src={'https://pristor.ru/wp-content/uploads/2018/05/%D0%9A%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D1%8B%D0%B5-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8-%D0%BD%D0%B0-%D0%B0%D0%B2%D1%83-%D0%BF%D1%80%D0%BE-%D0%BC%D0%BE%D1%80%D0%B5-%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD-%D0%B2%D0%BE%D0%B4%D1%83-%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B0-2018-11.jpg'}/>
         },
         {
             id: 3,
@@ -28,32 +28,37 @@ let initialState = {
         },
     ],
     messageData: [
-        {message: 'Hi'},
-        {message: 'Hello World'},
-        {message: 'React it`s cool'},
-        {message: 'Yo'},
+        {id: 1, message: 'Hi'},
+        {id: 2, message: 'Hello World'},
+        {id: 3, message: 'React it`s cool'},
+        {id: 4, message: 'Yo'},
     ],
     newMessageBody: '',
-}
+};
 
 const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_MESSAGE:
-            let newMessage = {
-                message: state.newMessageBody,
+            let body = state.newMessageBody
+            return {
+                ...state,
+                messageData: [...state.messageData, {id:5 ,message: body}],
+                newMessageBody: '',
             }
-            state.messageData.push(newMessage);
-            state.newMessageBody = '';
-            return state
-        case UPDATE_NEW_MESSAGE_TEXT:
-            state.newMessageBody = action.newText;
-            return state;
+
+        case UPDATE_NEW_MESSAGE_BODY:
+            return {
+                ...state,
+                newMessageBody: action.newText,
+            }
+
         default:
             return state;
     }
 }
 
+
 export const addMessageActionCreator = () => ({type: ADD_MESSAGE});
-export const updateNewMessageTextActionCreator = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text});
+export const updateNewMessageTextActionCreator = (text) => ({type: UPDATE_NEW_MESSAGE_BODY, newText: text});
 
 export default dialogsReducer

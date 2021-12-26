@@ -3,6 +3,7 @@ import DialogItem from "./DialogItem/DialogItem";
 import Messages from "./Message/Message";
 import React from "react";
 
+
 const Dialogs = (props) => {
 
     let state = props.dialogsPage
@@ -10,6 +11,8 @@ const Dialogs = (props) => {
                                                                             avatar={d.avatar}/>);
     let messagesElements = state.messageData.map(m => <Messages message={m.message}/>);
     let newMessageBody = state.newMessageBody;
+
+    let newMessageElement = React.createRef()
 
     let addMessage = () => {
         props.sendMessage();
@@ -28,7 +31,8 @@ const Dialogs = (props) => {
                 {messagesElements}
                 <div className={s.inputMessage}>
                     <div>
-                    <textarea onChange={onMessageChange}
+                    <textarea ref={newMessageElement}
+                              onChange={onMessageChange}
                               value={newMessageBody}
                               placeholder={'Enter Your Text  Post'}/>
                     </div>
