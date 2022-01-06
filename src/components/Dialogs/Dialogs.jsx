@@ -23,6 +23,7 @@ const Dialogs = (props) => {
         props.updateNewMessageBody(body);
     }
     return (
+
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
                 {dialogsElements}
