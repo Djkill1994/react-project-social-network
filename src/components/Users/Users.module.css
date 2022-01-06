@@ -1,6 +1,11 @@
 .photoUrl {
-    width: 150px;
-    height: 150px;
-    border-radius: 80px;
+    width: 80px;
+}
 
+.selectedPage {
+    font-weight: bold;
+}
+
+.selectedPageNumber{
+    cursor: pointer;
 }
