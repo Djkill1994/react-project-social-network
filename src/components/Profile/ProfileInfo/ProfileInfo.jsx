@@ -1,7 +1,14 @@
-import s from './ProfileInfo.module.css'
+import s from './ProfileInfo.module.css';
 import Preloader from '../../common/Preloader/Preloader';
-import youTubeIcon from '../../../assets/Image/iconSocialNetwork/youTube.png'
 import {OptionalLink} from "../../common/OptionalLink/OptionalLink";
+import youTubeIcon from '../../../assets/Image/iconSocialNetwork/youTube.png';
+import facebook from '../../../assets/Image/iconSocialNetwork/facebook.png';
+import generalPage from '../../../assets/Image/iconSocialNetwork/generalPage.png';
+import gitHub from '../../../assets/Image/iconSocialNetwork/gitHub.png';
+import contacts from '../../../assets/Image/iconSocialNetwork/contacts.png';
+import twitter from '../../../assets/Image/iconSocialNetwork/twitter.png';
+import vk from '../../../assets/Image/iconSocialNetwork/vk.png';
+import instagram from '../../../assets/Image/iconSocialNetwork/instagram.png'
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -15,42 +22,30 @@ const ProfileInfo = (props) => {
                     src={'https://st.depositphotos.com/1288156/4466/i/600/depositphotos_44660695-stock-photo-himalaya-mountains-black-and-white.jpg'}
                     alt={'no img'}/>
             </div>
-            <div>
+            <div className={s.userName}>
                 {props.profile.fullName}
             </div>
-            <div className={s.info}>
+            <div>
                 <img src={props.profile.photos.large}/>
-                <div>
-                    About Me: {props.profile.aboutMe}
-                </div>
-                <div>
+
+                <div className={s.info}>
+                    <div>
+                        About Me: {props.profile.aboutMe}
+                    </div>
                     Contacts:
-                    <div>
-                        Facebook: {props.profile.contacts.facebook}
-                    </div>
-                    <div>
-                        Website: {props.profile.contacts.website}
-                    </div>
-                    <div>
-                        VK: {props.profile.contacts.vk}
-                    </div>
-                    <div>
-                        Twitter: {props.profile.contacts.twitter}
-                    </div>
-                    <div>
-                        Instagram: {props.profile.contacts.instagram}
-                    </div>
-                    <div>
-                        <img src={youTubeIcon}/>:
-                    </div>
-                    <OptionalLink link={props.profile.contacts.github} title='Github'/>
-                    <div>
-                        MainLink: {props.profile.contacts.mainLink}
+                    <OptionalLink link={props.profile.contacts.facebook} title={<img src={facebook}/>}/>
+                    <OptionalLink link={props.profile.contacts.website} title={<img src={generalPage}/>}/>
+                    <OptionalLink link={props.profile.contacts.vk} title={<img src={vk}/>}/>
+                    <OptionalLink link={props.profile.contacts.twitter} title={<img src={twitter}/>}/>
+                    <OptionalLink link={props.profile.contacts.instagram} title={<img src={instagram}/>}/>
+                    <OptionalLink link={props.profile.contacts.youtube} title={<img src={youTubeIcon}/>}/>
+                    <OptionalLink link={props.profile.contacts.github} title={<img src={gitHub}/>}/>
+                    <OptionalLink link={props.profile.contacts.mainLink} title={<img src={contacts}/>}/>
+                    <div className={s.lookingJob}>
+                        <OptionalLink link={props.profile.contacts.lookingForAJob} title='Looking for a job'/>
                     </div>
                 </div>
-                <div>
-                    Looking For A Job:
-                </div>
+
             </div>
         </div>
     );

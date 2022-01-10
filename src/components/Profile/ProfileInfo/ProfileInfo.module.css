@@ -2,3 +2,19 @@
     width: 1000px;
     height: 200px;
 }
+
+.info img {
+    width: 20px;
+}
+
+.userName {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+
+
+.lookingJob {
+
+    font-weight: bold;
+}
