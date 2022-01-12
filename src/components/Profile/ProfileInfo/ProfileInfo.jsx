@@ -10,6 +10,7 @@ import twitter from '../../../assets/Image/iconSocialNetwork/twitter.png';
 import vk from '../../../assets/Image/iconSocialNetwork/vk.png';
 import instagram from '../../../assets/Image/iconSocialNetwork/instagram.png'
 
+
 const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader/>
@@ -33,7 +34,8 @@ const ProfileInfo = (props) => {
                         About Me: {props.profile.aboutMe}
                     </div>
                     Contacts:
-                    <OptionalLink link={props.profile.contacts.facebook} title={<img src={facebook}/>}/>
+                    <OptionalLink s={s.lookingJob} link={props.profile.contacts.facebook}
+                                  title={<img src={facebook}/>}/>
                     <OptionalLink link={props.profile.contacts.website} title={<img src={generalPage}/>}/>
                     <OptionalLink link={props.profile.contacts.vk} title={<img src={vk}/>}/>
                     <OptionalLink link={props.profile.contacts.twitter} title={<img src={twitter}/>}/>
