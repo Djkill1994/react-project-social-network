@@ -2,7 +2,6 @@ import React from "react";
 import style from './Users.module.css'
 import userPhoto from '../../assets/Image/pngegg.png'
 import {NavLink} from "react-router-dom";
-import {buttonFollowAPI, buttonUnFollowAPI} from "../../api/api";
 
 let Users = (props) => {
 
@@ -32,29 +31,12 @@ let Users = (props) => {
                     </div>
                     <div>
                         {u.followed
-                            ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
-                                props.toggleFollowingProgress(true, u.id);
-                                buttonUnFollowAPI.deleteButton(u.id)
-                                    .then(data => {
-                                        if (data.resultCode === 0) {
-                                            props.unfollow(u.id)
-                                        }
-                                        props.toggleFollowingProgress(false, u.id)
-                                    });
-                            }
+                            ? <button disabled={props.followingInProgress
+                                .some(id => id === u.id)} onClick={() => {props.unfollow(u.id)}
                             }>UnFollow</button>
 
-                            : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
-                                props.toggleFollowingProgress(true, u.id)
-                                buttonFollowAPI.postButton(u.id)
-                                    .then(data => {
-                                        if (data.resultCode === 0) {
-                                            props.follow(u.id)
-                                        }
-                                        props.toggleFollowingProgress(false, u.id)
-                                    });
-                            }
-
+                            : <button disabled={props.followingInProgress
+                                .some(id => id === u.id)} onClick={() => {props.follow(u.id)}
                             }>Follow</button>}
                     </div>
                 </span>
