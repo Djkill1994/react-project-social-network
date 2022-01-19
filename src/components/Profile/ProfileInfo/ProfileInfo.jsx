@@ -8,7 +8,9 @@ import gitHub from '../../../assets/Image/iconSocialNetwork/gitHub.png';
 import contacts from '../../../assets/Image/iconSocialNetwork/contacts.png';
 import twitter from '../../../assets/Image/iconSocialNetwork/twitter.png';
 import vk from '../../../assets/Image/iconSocialNetwork/vk.png';
-import instagram from '../../../assets/Image/iconSocialNetwork/instagram.png'
+import instagram from '../../../assets/Image/iconSocialNetwork/instagram.png';
+import ProfileStatus from './ProfileStatus'
+
 
 
 const ProfileInfo = (props) => {
@@ -28,7 +30,7 @@ const ProfileInfo = (props) => {
             </div>
             <div>
                 <img src={props.profile.photos.large}/>
-
+                <ProfileStatus status={'Hello world'} />
                 <div className={s.info}>
                     <div>
                         About Me: {props.profile.aboutMe}
