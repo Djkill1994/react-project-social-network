@@ -7,8 +7,32 @@
     width: 20px;
 }
 
+.info{
+    display: flex;
+    flex-direction: column;
+}
+
 
 .userName {
     font-size: 40px;
     font-weight: bold;
+    margin-left: 270px;
+}
+
+.avatar{
+    margin-left: 270px;
+}
+
+
+.status{
+    font-weight: bold;
+}
+
+.status:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px black;
+}
+
+.infoBlock{
+    margin-left: 10px;
 }

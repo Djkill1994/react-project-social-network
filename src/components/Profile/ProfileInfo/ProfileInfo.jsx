@@ -12,7 +12,6 @@ import instagram from '../../../assets/Image/iconSocialNetwork/instagram.png';
 import ProfileStatus from './ProfileStatus'
 
 
-
 const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader/>
@@ -25,34 +24,37 @@ const ProfileInfo = (props) => {
                     src={'https://st.depositphotos.com/1288156/4466/i/600/depositphotos_44660695-stock-photo-himalaya-mountains-black-and-white.jpg'}
                     alt={'no img'}/>
             </div>
-            <div className={s.userName}>
-                {props.profile.fullName}
-            </div>
-            <div>
-                <img src={props.profile.photos.large}/>
-                <ProfileStatus status={'Hello world'} />
-                <div className={s.info}>
-                    <div>
-                        About Me: {props.profile.aboutMe}
-                    </div>
-                    <div className={s.contacts}>
-                        Contacts:
-                        <OptionalLink s={s.infoDate} link={props.profile.contacts.facebook}
-                                      title={<img src={facebook}/>}/>
-                        <OptionalLink s={s.infoDate} link={props.profile.contacts.website}
-                                      title={<img src={generalPage}/>}/>
-                        <OptionalLink s={s.infoDate} link={props.profile.contacts.vk} title={<img src={vk}/>}/>
-                        <OptionalLink s={s.infoDate} link={props.profile.contacts.twitter}
-                                      title={<img src={twitter}/>}/>
-                        <OptionalLink s={s.infoDate} link={props.profile.contacts.instagram}
-                                      title={<img src={instagram}/>}/>
-                        <OptionalLink s={s.infoDate} link={props.profile.contacts.youtube}
-                                      title={<img src={youTubeIcon}/>}/>
-                        <OptionalLink s={s.infoDate} link={props.profile.contacts.github} title={<img src={gitHub}/>}/>
-                        <OptionalLink s={s.infoDate} link={props.profile.contacts.mainLink}
-                                      title={<img src={contacts}/>}/>
-                        <div className={s.lookingJob}>
-                            <OptionalLink link={props.profile.contacts.lookingForAJob} title='Looking for a job'/>
+            <div className={s.infoBlock}>
+                <div className={s.userName}>
+                    {props.profile.fullName}
+                </div>
+                <div>
+                    <img className={s.avatar} src={props.profile.photos.large} alt={'no img'}/>
+                    <ProfileStatus status={'Hello world'}/>
+                    <div className={s.info}>
+                        <div>
+                            About Me: {props.profile.aboutMe}
+                        </div>
+                        <div className={s.contacts}>
+                            Contacts:
+                            <OptionalLink s={s.infoDate} link={props.profile.contacts.facebook}
+                                          title={<img src={facebook}/>}/>
+                            <OptionalLink s={s.infoDate} link={props.profile.contacts.website}
+                                          title={<img src={generalPage}/>}/>
+                            <OptionalLink s={s.infoDate} link={props.profile.contacts.vk} title={<img src={vk}/>}/>
+                            <OptionalLink s={s.infoDate} link={props.profile.contacts.twitter}
+                                          title={<img src={twitter}/>}/>
+                            <OptionalLink s={s.infoDate} link={props.profile.contacts.instagram}
+                                          title={<img src={instagram}/>}/>
+                            <OptionalLink s={s.infoDate} link={props.profile.contacts.youtube}
+                                          title={<img src={youTubeIcon}/>}/>
+                            <OptionalLink s={s.infoDate} link={props.profile.contacts.github}
+                                          title={<img src={gitHub}/>}/>
+                            <OptionalLink s={s.infoDate} link={props.profile.contacts.mainLink}
+                                          title={<img src={contacts}/>}/>
+                            <div className={s.lookingJob}>
+                                <OptionalLink link={props.profile.contacts.lookingForAJob} title='Looking for a job'/>
+                            </div>
                         </div>
                     </div>
                 </div>
