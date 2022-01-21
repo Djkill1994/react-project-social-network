@@ -10,6 +10,7 @@ import twitter from '../../../assets/Image/iconSocialNetwork/twitter.png';
 import vk from '../../../assets/Image/iconSocialNetwork/vk.png';
 import instagram from '../../../assets/Image/iconSocialNetwork/instagram.png';
 import ProfileStatus from './ProfileStatus'
+import {updateStatus} from "../../../redux/profile-reducer";
 
 
 const ProfileInfo = (props) => {
@@ -30,7 +31,7 @@ const ProfileInfo = (props) => {
                 </div>
                 <div>
                     <img className={s.avatar} src={props.profile.photos.large} alt={'no img'}/>
-                    <ProfileStatus status={'Hello world'}/>
+                    <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
                     <div className={s.info}>
                         <div>
                             About Me: {props.profile.aboutMe}
