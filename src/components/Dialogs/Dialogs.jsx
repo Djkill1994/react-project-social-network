@@ -12,22 +12,14 @@ const Dialogs = (props) => {
     let dialogsElements = state.dialogData.map(d => <DialogItem name={d.name} id={d.id}
                                                                 avatar={d.avatar}/>);
     let messagesElements = state.messageData.map(m => <Messages message={m.message}/>);
-    let newMessageBody = state.newMessageBody;
+    // let newMessageBody = state.newMessageBody;
+    // let newMessageElement = React.createRef();
 
-    let newMessageElement = React.createRef()
-
-    let addMessage = () => {
-        props.sendMessage();
+    let addNewMessage = (values) => {
+        props.sendMessage(values.newMessageBody);
     }
 
-    let onMessageChange = (e) => {
-        let body = e.target.value;
-        props.updateNewMessageBody(body);
-    }
-
-    let addNewMessage = (values) =>{
-        alert(values.newMessageBody)
-    }
+    if (!props.isAuth) return <Redirect to={"/login"}/>
 
     return (
 
@@ -47,7 +39,7 @@ const AddMessageForm = (props) => {
     return <form onSubmit={props.handleSubmit}>
         <div className={s.inputMessage}>
             <div>
-                <Field placeholder={'Enter Your Text  Post'} name={'newMessageBody'} component={'textarea'}/>
+                <Field placeholder={'Enter Your Text'} name={'newMessageBody'} component={'textarea'}/>
             </div>
             <div>
                 <button>Add Message</button>
