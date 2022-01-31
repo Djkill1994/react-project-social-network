@@ -11,7 +11,6 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import {Component} from "react";
 import {connect} from "react-redux";
-import {getAuthUserData} from "./redux/auth-reducer";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 
@@ -22,8 +21,8 @@ class App extends Component {
     }
 
     render() {
-        if(!this.props.initialized){
-           return <Preloader/>
+        if (!this.props.initialized) {
+            return <Preloader/>
         }
 
         return (
@@ -54,4 +53,4 @@ const mapStateToProps = (state) => ({
     initialized: state.app.initialized
 })
 
-export default  connect(mapStateToProps,{initializeApp})(App);
+export default connect(mapStateToProps, {initializeApp})(App);
