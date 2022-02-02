@@ -25,7 +25,7 @@ it('message of new post should be correct', () => {
     expect(newState.postsData[2].message).toBe("Io Po Jo")
 });
 
-it('after deleting length of message should be decrement', (state) => {
+it('after deleting length of message should be decrement', () => {
     //1. test data
     let action = deletePost(1)
     //2. action
