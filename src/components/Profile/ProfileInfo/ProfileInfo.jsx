@@ -9,10 +9,7 @@ import contacts from '../../../assets/Image/iconSocialNetwork/contacts.png';
 import twitter from '../../../assets/Image/iconSocialNetwork/twitter.png';
 import vk from '../../../assets/Image/iconSocialNetwork/vk.png';
 import instagram from '../../../assets/Image/iconSocialNetwork/instagram.png';
-import ProfileStatus from './ProfileStatus'
-import {updateStatus} from "../../../redux/profile-reducer";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
-
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
