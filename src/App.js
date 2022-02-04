@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
-import {BrowserRouter, Route} from "react-router-dom";
+import {Route, withRouter} from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
@@ -13,6 +13,7 @@ import {Component} from "react";
 import {connect} from "react-redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
+import {compose} from "redux";
 
 
 class App extends Component {
@@ -26,7 +27,6 @@ class App extends Component {
         }
 
         return (
-            <BrowserRouter>
                 <div className={'app-wrapper'}>
                     <HeaderContainer/>
                     <Navbar/>
@@ -44,7 +44,6 @@ class App extends Component {
 
                     </div>
                 </div>
-            </BrowserRouter>
         );
     }
 }
@@ -53,4 +52,6 @@ const mapStateToProps = (state) => ({
     initialized: state.app.initialized
 })
 
-export default connect(mapStateToProps, {initializeApp})(App);
+export default compose(
+    withRouter,
+    connect(mapStateToProps, {initializeApp}))(App);

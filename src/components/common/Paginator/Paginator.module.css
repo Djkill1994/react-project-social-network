@@ -1,11 +1,8 @@
-.photoUrl {
-    width: 80px;
-}
 
 .selectedPage {
     font-weight: bold;
 }
 
-.selectedPageNumber {
+.selectedPageNumber{
     cursor: pointer;
 }
