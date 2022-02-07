@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/react-project-social-network/static/css/main.a86889c2.chunk.css",
+    "main.js": "/react-project-social-network/static/js/main.3e1b5772.chunk.js",
+    "main.js.map": "/react-project-social-network/static/js/main.3e1b5772.chunk.js.map",
+    "runtime-main.js": "/react-project-social-network/static/js/runtime-main.2e4180f2.js",
+    "runtime-main.js.map": "/react-project-social-network/static/js/runtime-main.2e4180f2.js.map",
+    "static/js/2.ee8f1c1b.chunk.js": "/react-project-social-network/static/js/2.ee8f1c1b.chunk.js",
+    "static/js/2.ee8f1c1b.chunk.js.map": "/react-project-social-network/static/js/2.ee8f1c1b.chunk.js.map",
+    "static/css/3.ed42d5d2.chunk.css": "/react-project-social-network/static/css/3.ed42d5d2.chunk.css",
+    "static/js/3.0c701775.chunk.js": "/react-project-social-network/static/js/3.0c701775.chunk.js",
+    "static/js/3.0c701775.chunk.js.map": "/react-project-social-network/static/js/3.0c701775.chunk.js.map",
+    "static/css/4.856e4236.chunk.css": "/react-project-social-network/static/css/4.856e4236.chunk.css",
+    "static/js/4.1422e572.chunk.js": "/react-project-social-network/static/js/4.1422e572.chunk.js",
+    "static/js/4.1422e572.chunk.js.map": "/react-project-social-network/static/js/4.1422e572.chunk.js.map",
+    "static/js/5.9e57bd56.chunk.js": "/react-project-social-network/static/js/5.9e57bd56.chunk.js",
+    "static/js/5.9e57bd56.chunk.js.map": "/react-project-social-network/static/js/5.9e57bd56.chunk.js.map",
+    "index.html": "/react-project-social-network/index.html",
+    "static/css/3.ed42d5d2.chunk.css.map": "/react-project-social-network/static/css/3.ed42d5d2.chunk.css.map",
+    "static/css/4.856e4236.chunk.css.map": "/react-project-social-network/static/css/4.856e4236.chunk.css.map",
+    "static/css/main.a86889c2.chunk.css.map": "/react-project-social-network/static/css/main.a86889c2.chunk.css.map",
+    "static/js/2.ee8f1c1b.chunk.js.LICENSE.txt": "/react-project-social-network/static/js/2.ee8f1c1b.chunk.js.LICENSE.txt",
+    "static/media/Preloader.258f028f.svg": "/react-project-social-network/static/media/Preloader.258f028f.svg",
+    "static/media/pngegg.bf3d81a3.png": "/react-project-social-network/static/media/pngegg.bf3d81a3.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2e4180f2.js",
+    "static/js/2.ee8f1c1b.chunk.js",
+    "static/css/main.a86889c2.chunk.css",
+    "static/js/main.3e1b5772.chunk.js"
+  ]
+}
