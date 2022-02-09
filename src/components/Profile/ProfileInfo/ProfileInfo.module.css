@@ -16,7 +16,7 @@
 .userName {
     font-size: 40px;
     font-weight: bold;
-    margin-left: 270px;
+    margin: auto;
 }
 
 .avatar{
@@ -35,4 +35,8 @@
 
 .infoBlock{
     margin-left: 10px;
+}
+
+.infoDate{
+    padding-left: 10px;
 }
