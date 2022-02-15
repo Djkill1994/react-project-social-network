@@ -30,4 +30,4 @@ export const Input = (props) => {
                validate={validators} component={component}
                {...props}/> {text}
     </div>
-)
+);

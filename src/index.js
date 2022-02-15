@@ -10,7 +10,7 @@ import {HashRouter} from "react-router-dom";
 
 
 ReactDOM.render(
-    <HashRouter>
+    <HashRouter basename={'react-project-social-network'}>
         <Provider store={store}>
             <App/>
         </Provider>

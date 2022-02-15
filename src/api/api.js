@@ -45,6 +45,7 @@ export const profileAPI = {
     },
     updateStatus(status) {
         return instance.put(`profile/status`, {status: status})
+        //try catch прочитать
     },
     savePhoto(photoFile) {
         const formData = new FormData();
