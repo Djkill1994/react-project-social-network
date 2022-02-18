@@ -19,18 +19,19 @@ const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsCo
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
 
 class App extends Component {
-    catchAllUnhandledErrors = (reason, promise) => {
-        alert("Some error")
-    }
+//     catchAllUnhandledErrors = (reason, promise) => {
+//         alert("Some error")
+//     }
 
     componentDidMount() {
         this.props.initializeApp();
-        window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
+        // window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
     }
 
-   componentWillUnmount() {
-       window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors);
-   }
+    //
+    // componentWillUnmount() {
+    //     window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors);
+    // }
 
     render() {
         if (!this.props.initialized) {
@@ -39,8 +40,6 @@ class App extends Component {
 
         return (
             <div className={'app-wrapper'}>
-
-
                 <HeaderContainer/>
                 <Navbar/>
 
@@ -52,10 +51,13 @@ class App extends Component {
                         <Route path='/music' render={() => <Music/>}/>
                         <Route path='/news' render={() => <News/>}/>
                         <Route path='/settings' render={() => <Settings/>}/>
-                        <Route path='/users' render={() => <UsersContainer/>}/>
+                        <Route path='/users' render={() => <UsersContainer pageTitle={"Samurai"}/>}/>
                         <Route path='/login' render={() => <Login/>}/>
 
-                        <Route path='*' render={() => <div>404 NOT FOUND</div>}/>
+                        <Route path='*'
+                               render={() => <div>Hello People , this my training project!!!))) Samurai SocialNetwork
+                                   Typescript-React-React-Redux!!!!
+                               </div>}/>
                     </Switch>
                 </div>
             </div>
