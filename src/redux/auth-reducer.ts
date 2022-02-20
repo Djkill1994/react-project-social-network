@@ -1,4 +1,4 @@
-import {authAPI, securityAPI} from "../api/api";
+import {authAPI, ResultCodeForCaptchaEnum, ResultCodesEnum, securityAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
 
 
@@ -61,26 +61,26 @@ export const setAuthUserData = (userId: number | null, login: string | null, ema
     type: SET_USER_DATA,
     payload: {userId, login, email, isAuth}
 });
-
+//types
 export const getAuthUserData = () => async (dispatch:any) => {
-    const response = await authAPI.me();
+    const meData = await authAPI.me();
 
-    if (response.data.resultCode === 0) {
-        let {id, login, email} = response.data.data;
+    if (meData.resultCode === ResultCodesEnum.Success) {
+        let {id, login, email} = meData.data;
         dispatch(setAuthUserData(id, login, email, true));
     }
 }
 
-export const login = (email:string, password: string, rememberMe: boolean, captcha: any) => async (dispatch: any) => {
-    const response = await authAPI.login(email, password, rememberMe, captcha);
+export const login = (email:string, password: string, rememberMe: boolean, captcha: string) => async (dispatch: any) => {
+    const data = await authAPI.login(email, password, rememberMe, captcha);
 
-    if (response.data.resultCode === 0) {
+    if (data.resultCode === ResultCodesEnum.Success) {
         dispatch(getAuthUserData())
     } else {
-        if (response.data.resultCode === 10) {
+        if (data.resultCode === ResultCodeForCaptchaEnum.CaptchaIsRequired) {
             dispatch(getCaptchaUrl());
         }
-        let message = response.data.messages.length > 0 ? response.data.messages[0] : "Some error";
+        let message = data.messages.length > 0 ? data.messages[0] : "Some error";
         dispatch(stopSubmit("login", {_error: message}));
     }
 }

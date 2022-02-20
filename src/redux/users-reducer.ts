@@ -4,7 +4,6 @@ import {UsersType} from "../types/types"
 import {AppStateType} from "./redux-store";
 import {Dispatch} from "redux";
 import {ThunkAction} from "redux-thunk";
-import users from "../components/Users/Users";
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
