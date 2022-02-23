@@ -1,5 +1,5 @@
 import { InjectedFormProps, reduxForm } from "redux-form";
-import { createField, Input, LoginFormValuesType } from "../common/FormsControls/FormsControls";
+import { createField, Input} from "../common/FormsControls/FormsControls";
 import { required } from "../../utils/validators/validators";
 import { connect } from "react-redux";
 import { login } from "../../redux/auth-reducer";
@@ -16,12 +16,12 @@ const LoginForm: React.FC<InjectedFormProps<LoginFormValuesType,
   LoginFormOwnProps> & LoginFormOwnProps> = ({ handleSubmit,
                                                                   error, captchaUrl }) => {
   return <form onSubmit={ handleSubmit }>
-    { createField('Email', 'email', [required], Input) }
-    { createField('Password', 'password', [required], Input, { type: 'password' }) }
-    { createField(undefined, 'rememberMe', [], Input, { type: 'checkbox' }, "remember me") }
+    { createField<LoginFormValuesTypeKeys>('Email', "email", [required], Input) }
+    { createField<LoginFormValuesTypeKeys>('Password', 'password', [required], Input, { type: 'password' }) }
+    { createField<LoginFormValuesTypeKeys>(undefined, 'rememberMe', [], Input, { type: 'checkbox' }, "remember me") }
 
     { captchaUrl && <img src={ captchaUrl } alt={ "no img" }/> }
-    { captchaUrl && createField('Symbols from image', 'captcha', [required], Input) }
+    { captchaUrl && createField<LoginFormValuesTypeKeys>('Symbols from image', 'captcha', [required], Input) }
 
     { error && <div className={ styles.formSummaryError }>
       { error }
@@ -42,6 +42,15 @@ type MapStatePropsType = {
 type MapDispatchPropsType = {
   login: (email: string, password: string, rememberMe: boolean, captcha: string) => void
 }
+
+type LoginFormValuesType = {
+  email: string
+  rememberMe: boolean
+  captcha: string
+  password: string
+}
+
+type LoginFormValuesTypeKeys = Extract<keyof LoginFormValuesType, string>
 
 const Login: React.FC<MapStatePropsType & MapDispatchPropsType> = (props) => {
   const onSubmit = (formData: LoginFormValuesType) => {
