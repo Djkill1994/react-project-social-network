@@ -8,14 +8,14 @@ export const usersAPI = {
       });
   },
   follow(userId: number) {
-    return instance.post(`follow/${ userId }`,)
+    return instance.post<ResponseType>(`follow/${ userId }`,)
       .then(response => {
         return response.data
       });
   },
 
   unFollow(userId: number) {
-    return instance.delete(`follow/${ userId }`,)
+    return instance.delete<ResponseType>(`follow/${ userId }`,)
       .then(response => {
         return response.data
       });

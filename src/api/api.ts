@@ -24,3 +24,9 @@ export type GetItemsType = {
     totalCount: number
     error: string | null
 }
+export type APIResponseType<D = {}, RC = ResultCodesEnum> = {
+    data: D
+    messages: Array<string>
+    resultCode: RC
+
+}
