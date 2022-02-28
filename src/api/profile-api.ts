@@ -25,7 +25,7 @@ export const profileAPI = {
       });
     //try catch прочитать
   },
-  savePhoto(photoFile: any) {
+  savePhoto(photoFile: File) {
     const formData = new FormData();
     formData.append("image", photoFile)
     return instance.put<APIResponseType<SavePhotoResponseType>>(`profile/photo`, formData, {
