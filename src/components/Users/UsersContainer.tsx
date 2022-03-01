@@ -14,7 +14,7 @@ import {
     getPageSize,
     getTotalUsersCount, getUsers
 } from "../../redux/users-selectors";
-import {UsersType} from "../../types/types";
+import {UserType} from "../../types/types";
 import {AppStateType} from "../../redux/redux-store";
 
 type MapStatePropsType = {
@@ -22,7 +22,7 @@ type MapStatePropsType = {
     pageSize:number
     isFetching: boolean
     totalUsersCount: number
-    users: Array<UsersType>
+    users: Array<UserType>
     followingInProgress: Array<number>
 }
 

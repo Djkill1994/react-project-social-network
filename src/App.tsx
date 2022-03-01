@@ -26,6 +26,9 @@ type DispatchPropsType = {
   initializeApp: () => void
 }
 
+const SuspendedDialogs = withSuspense(DialogsContainer)
+const SuspendedProfile = withSuspense(ProfileContainer)
+
 class App extends Component<MapPropsType & DispatchPropsType> {
   catchAllUnhandledErrors = (e: PromiseRejectionEvent) => {
     alert("Some error")
@@ -35,7 +38,6 @@ class App extends Component<MapPropsType & DispatchPropsType> {
     this.props.initializeApp();
     window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
   }
-
 
   componentWillUnmount() {
     window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors);
@@ -54,8 +56,8 @@ class App extends Component<MapPropsType & DispatchPropsType> {
         <div className={ 'app-wrapper-content' }>
           <Switch>
             {/*<Route path='/profile/:userId?' render={() => <Redirect to={"/profile"}/>}/>*/ }
-            <Route path='/profile/:userId?' render={ () => withSuspense(ProfileContainer) }/>
-            <Route path='/dialogs' render={ () => withSuspense(DialogsContainer) }/>
+            <Route path='/profile/:userId?' render={ () => <SuspendedProfile/> }/>
+            <Route path='/dialogs' render={ () => <SuspendedDialogs/> }/>
             <Route path='/music' render={ () => <Music/> }/>
             <Route path='/news' render={ () => <News/> }/>
             <Route path='/settings' render={ () => <Settings/> }/>

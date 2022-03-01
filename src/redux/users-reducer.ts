@@ -1,12 +1,12 @@
 import { updateObjectInArray } from "../utils/obj-helpers";
-import { UsersType } from "../types/types"
+import { UserType } from "../types/types"
 import { AppStateType, BaseThunkType, InferActionsTypes } from "./redux-store";
 import { Dispatch } from "redux";
 import { ThunkAction } from "redux-thunk";
 import { usersAPI } from "../api/users-api";
 
 let initialState = {
-  users: [] as Array<UsersType>,
+  users: [] as Array<UserType>,
   pageSize: 10 as number,
   totalUsersCount: 0 as number,
   currentPage: 1 as number,
@@ -67,7 +67,7 @@ const usersReducer = (state = initialState, action: ActionsType): InitialStateTy
 const actions = {
   followSuccess: (userId: number) => ({ type: 'FOLLOW', userId }) as const,
   unfollowSuccess: (userId: number) => ({ type: 'UNFOLLOW', userId }) as const,
-  setUsers: (users: Array<UsersType>) => ({ type: 'SET_USERS', users }) as const,
+  setUsers: (users: Array<UserType>) => ({ type: 'SET_USERS', users }) as const,
   setCurrentPage: (currentPage: number) => ({
     type: 'SET_CURRENT_PAGE',
     currentPage
