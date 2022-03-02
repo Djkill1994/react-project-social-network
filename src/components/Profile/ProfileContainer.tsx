@@ -14,7 +14,7 @@ type DispatchPropsType = {
     getStatus: (userId: number) => void
     updateStatus: (status: string) => void
     savePhoto: (file: File) => void
-    saveProfile: (profile: ProfileType) => void
+    saveProfile: (profile: ProfileType) => Promise<any>
 }
 
 type PathParamsType = {
@@ -33,8 +33,12 @@ class ProfileContainer extends React.Component<PropsType> {
         if (!userId) {
             this.props.history.push("/login")
         }
-        this.props.getUserProfile(userId);
-        this.props.getStatus(userId);
+        if (!userId){
+            console.error("ID should exists in URI params or in state ('authorizedUserId')")
+        }else {
+            this.props.getUserProfile(userId);
+            this.props.getStatus(userId);
+        }
     }
 
     componentDidMount() {
@@ -68,6 +72,6 @@ let mapStateToProps = (state: AppStateType) => ({
     isAuth: state.auth.isAuth,
 })
 
-export default compose(
+export default compose<React.ComponentType>(
     connect(mapStateToProps, {getUserProfile, getStatus, updateStatus, savePhoto, saveProfile}), withRouter,
 )(ProfileContainer);

@@ -4,16 +4,16 @@ import Navbar from "./components/Navbar/Navbar";
 import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
-import { Route, Switch, withRouter } from "react-router-dom";
+import { BrowserRouter, Route, Switch, withRouter } from "react-router-dom";
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import { Component } from "react";
-import { connect } from "react-redux";
+import { connect, Provider } from "react-redux";
 import { initializeApp } from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 import { compose } from "redux";
-import { AppStateType } from "./redux/redux-store";
+import store, { AppStateType } from "./redux/redux-store";
 import { withSuspense } from "./hok/withSuspense";
 
 
@@ -79,6 +79,16 @@ const mapStateToProps = (state: AppStateType) => ({
   initialized: state.app.initialized
 })
 
-export default compose(
+let AppContainer = compose<React.ComponentType>(
   withRouter,
   connect(mapStateToProps, { initializeApp }))(App);
+
+const ReactJsApp: React.FC = () => {
+  return <BrowserRouter>
+    <Provider store={store}>
+      <AppContainer/>
+    </Provider>
+  </BrowserRouter>
+}
+
+export default ReactJsApp

@@ -16,7 +16,7 @@ import ProfileDataForm from "./ProfileDataForm";
 import { ContactsType, ProfileType } from "../../../types/types";
 
 type PropsType = {
-  profile: ProfileType
+  profile: ProfileType | null
   status: string
   updateStatus: (status: string) => void
   isOwner: boolean

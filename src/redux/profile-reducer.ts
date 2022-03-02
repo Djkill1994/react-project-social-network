@@ -15,7 +15,6 @@ let initialState = {
   ] as Array<PostType>,
   profile: null as ProfileType | null,
   status: '',
-  newPostText: ''
 }
 
 
@@ -26,7 +25,6 @@ const profileReducer = (state = initialState, action: ActionsType): InitialState
       return {
         ...state,
         postsData: [...state.postsData, { id: 3, message: text, likesCount: 0 }],
-        newPostText: '',
       }
     case 'SET_USER_PROFILE':
       return {

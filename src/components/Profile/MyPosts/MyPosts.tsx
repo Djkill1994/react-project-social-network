@@ -11,8 +11,10 @@ const maxLength10 = maxLengthCreator(10)
 
 type PropsTypePostForm = {}
 
-type PropsTypePosts = {
+export type MapPropsTypePosts = {
   postsData: Array<PostType>
+}
+export type DispatchPropsTypePosts = {
   addPost: (newPostText: string) => void
 }
 export type AddPostValuesType = {
@@ -37,7 +39,7 @@ const AddPostForm: React.FC<InjectedFormProps<AddPostValuesType,
 
 const AddNewPostReduxForm = reduxForm<AddPostValuesType, PropsTypePostForm>({ form: 'ProfileAddNewPostRedux' })(AddPostForm);
 
-const MyPosts: React.FC<PropsTypePosts> = props => {
+const MyPosts: React.FC<MapPropsTypePosts & DispatchPropsTypePosts> = props => {
   let postsElements = props.postsData.map(p => <Post key={ p.id } message={ p.message } likesCount={ p.likesCount }/>);
 
   let OnAddPost = (values: AddPostValuesType) => {
