@@ -5,8 +5,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import ReactJsApp from "./App";
 
-//<HashRouter basename={'react-project-social-network'}>
-
 ReactDOM.render(<ReactJsApp/>,document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function

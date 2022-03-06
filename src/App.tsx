@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
-import { BrowserRouter, Route, Switch, withRouter } from "react-router-dom";
+import { HashRouter, Route, Switch, withRouter } from "react-router-dom";
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
@@ -17,7 +17,7 @@ import store, { AppStateType } from "./redux/redux-store";
 import { withSuspense } from "./hok/withSuspense";
 
 
-const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
+const DialogsContainer = React.lazy(() => import("./components/dialogs/DialogsContainer"));
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
 
 
@@ -84,11 +84,11 @@ let AppContainer = compose<React.ComponentType>(
   connect(mapStateToProps, { initializeApp }))(App);
 
 const ReactJsApp: React.FC = () => {
-  return <BrowserRouter>
+  return <HashRouter basename={'react-project-social-network'}>
     <Provider store={store}>
       <AppContainer/>
     </Provider>
-  </BrowserRouter>
+  </HashRouter>
 }
 
 export default ReactJsApp

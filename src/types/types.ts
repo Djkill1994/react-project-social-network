@@ -32,6 +32,6 @@ export type UserType = {
     status: string
     photos: PhotosType
     followed: boolean
-    totalCount: number
-    error: string
+    // totalCount: number
+    // error: string
 }
