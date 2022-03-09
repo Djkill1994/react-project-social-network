@@ -52,7 +52,6 @@ class App extends Component<MapPropsType & DispatchPropsType> {
       <div className={ 'app-wrapper' }>
         <HeaderContainer/>
         <Navbar/>
-
         <div className={ 'app-wrapper-content' }>
           <Switch>
             {/*<Route path='/profile/:userId?' render={() => <Redirect to={"/profile"}/>}/>*/ }
