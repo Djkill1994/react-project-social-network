@@ -36,11 +36,6 @@ const ProfileInfo: React.FC<PropsType> = ({profile, status, updateStatus, isOwne
 
     return (
         <div>
-            <div className={s.titlePicture}>
-                <img
-                    src={'https://st.depositphotos.com/1288156/4466/i/600/depositphotos_44660695-stock-photo-himalaya-mountains-black-and-white.jpg'}
-                    alt={'no img'}/>
-            </div>
             <div className={s.infoBlock}>
                 <div>
                     <img className={s.avatar} src={profile.photos.large || userPhoto} alt={userPhoto}/>
