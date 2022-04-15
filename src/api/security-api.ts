@@ -1,13 +1,12 @@
-import { instance } from "./api";
+import {instance} from "./api";
 
 type GetCaptchaUrlResponseType = {
-  url: string
+    url: string
 }
 
 export const securityAPI = {
-  getCaptchaUrl() {
-    return instance.get<GetCaptchaUrlResponseType>(`security/get-captcha-url`)
-      .then(res => res.data)
-  },
-
+    getCaptchaUrl() {
+        return instance.get<GetCaptchaUrlResponseType>(`security/get-captcha-url`)
+            .then(res => res.data)
+    },
 }

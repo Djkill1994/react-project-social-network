@@ -1,16 +1,15 @@
 import {ResultCodeForCaptchaEnum, ResultCodesEnum} from "../api/api";
-import { FormAction, stopSubmit } from "redux-form";
-import { authAPI } from "../api/auth-api";
-import { securityAPI } from "../api/security-api";
-import { BaseThunkType, InferActionsTypes } from "./redux-store";
-import { Action } from "redux";
+import {FormAction, stopSubmit} from "redux-form";
+import {authAPI} from "../api/auth-api";
+import {securityAPI} from "../api/security-api";
+import {BaseThunkType, InferActionsTypes} from "./redux-store";
 
 let initialState = {
     userId: null as number | null,
     login: null as string | null,
     email: null as string | null,
     isAuth: false,
-    captchaUrl: null  as string | null,
+    captchaUrl: null as string | null,
 };
 
 export type InitialStateType = typeof initialState;
@@ -19,7 +18,7 @@ type ActionsType = InferActionsTypes<typeof actions>
 
 type ThunkType = BaseThunkType<ActionsType | FormAction>
 
-const authReducer = (state = initialState, action: ActionsType):InitialStateType => {
+const authReducer = (state = initialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
         case 'SET_USER_DATA':
         case 'GET_CAPTCHA_URL_SUCCESS':
@@ -37,7 +36,7 @@ export const actions = {
         type: 'SET_USER_DATA',
         payload: {userId, login, email, isAuth}
     } as const),
-    getCaptchaUrlSuccess: (captchaUrl:string) => ({
+    getCaptchaUrlSuccess: (captchaUrl: string) => ({
         type: 'GET_CAPTCHA_URL_SUCCESS',
         payload: {captchaUrl}
     } as const)
@@ -52,7 +51,7 @@ export const getAuthUserData = (): ThunkType => async (dispatch) => {
     }
 }
 
-export const login = (email:string, password: string, rememberMe: boolean, captcha: string): ThunkType => async (dispatch) => {
+export const login = (email: string, password: string, rememberMe: boolean, captcha: string): ThunkType => async (dispatch) => {
     const data = await authAPI.login(email, password, rememberMe, captcha);
 
     if (data.resultCode === ResultCodesEnum.Success) {

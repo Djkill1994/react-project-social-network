@@ -1,4 +1,4 @@
-import { InferActionsTypes } from "./redux-store";
+import {InferActionsTypes} from "./redux-store";
 
 type DialogType = {
     id: number | null
@@ -11,19 +11,19 @@ type MessageType = {
 }
 
 let initialState = {
-        dialogData: [
-            {id: 1, name: 'Vlad'},
-            {id: 2, name: 'Christina'},
-            {id: 3, name: 'Kirill'},
-            {id: 4, name: 'Matvei'},
-        ] as Array<DialogType>,
-        messageData: [
-            {id: 1, message: 'Hi'},
-            {id: 2, message: 'Hello World'},
-            {id: 3, message: 'React it`s cool'},
-            {id: 4, message: 'Yo'},
-        ] as Array<MessageType>,
-    };
+    dialogData: [
+        {id: 1, name: 'Vlad'},
+        {id: 2, name: 'Christina'},
+        {id: 3, name: 'Kirill'},
+        {id: 4, name: 'Matvei'},
+    ] as Array<DialogType>,
+    messageData: [
+        {id: 1, message: 'Hi'},
+        {id: 2, message: 'Hello World'},
+        {id: 3, message: 'React it`s cool'},
+        {id: 4, message: 'Yo'},
+    ] as Array<MessageType>,
+};
 
 export type InitialStateType = typeof initialState;
 type ActionsType = InferActionsTypes<typeof actions>
@@ -42,7 +42,7 @@ const dialogsReducer = (state = initialState, action: ActionsType): InitialState
 }
 
 export const actions = {
-    sendMessage:(newMessageBody: string) => ({type: 'ADD_MESSAGE', newMessageBody} as const)
+    sendMessage: (newMessageBody: string) => ({type: 'ADD_MESSAGE', newMessageBody} as const)
 }
 
 export default dialogsReducer

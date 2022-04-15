@@ -1,0 +1,10 @@
+.preloader {
+    width: 150px;
+    background-color: white;
+}
+
+.preloaderWrapper {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}

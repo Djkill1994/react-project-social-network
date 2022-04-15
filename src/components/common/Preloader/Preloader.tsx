@@ -1,13 +1,12 @@
 import preloader from '../../../assets/Image/Preloader.svg'
 import React from "react";
+import s from "./Preloader.module.css"
 
-type PropsType = {
-
-}
+type PropsType = {}
 
 let Preloader: React.FC<PropsType> = (props) => {
-    return <div style={{background: 'white'}}>
-        <img src={preloader}/>
+    return <div className={s.preloaderWrapper}>
+        <img alt="Preloader" src={preloader} className={s.preloader}/>
     </div>
 }
 

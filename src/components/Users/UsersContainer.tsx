@@ -18,8 +18,8 @@ import {UserType} from "../../types/types";
 import {AppStateType} from "../../redux/redux-store";
 
 type MapStatePropsType = {
-    currentPage:number
-    pageSize:number
+    currentPage: number
+    pageSize: number
     isFetching: boolean
     totalUsersCount: number
     users: Array<UserType>
@@ -27,9 +27,9 @@ type MapStatePropsType = {
 }
 
 type MapDispatchPropsType = {
-    getUsers: (currentPage: number, pageSize:number) => void
-    unfollow: (userId:number) => void
-    follow: (userId:number) => void
+    getUsers: (currentPage: number, pageSize: number) => void
+    unfollow: (userId: number) => void
+    follow: (userId: number) => void
 }
 
 type OwnPropsType = {
@@ -44,11 +44,10 @@ class UsersContainer extends React.Component<PropsType> {
         this.props.getUsers(currentPage, pageSize);
     }
 
-    onPageChanged = (pageNumber:number) => {
+    onPageChanged = (pageNumber: number) => {
         const {pageSize} = this.props
         this.props.getUsers(pageNumber, pageSize);
     };
-
 
     render() {
         return <>
