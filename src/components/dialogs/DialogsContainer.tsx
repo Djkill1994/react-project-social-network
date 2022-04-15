@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {withAuthRedirect} from "../../hok/withAuthRedirect";
 import {compose} from "redux";
 import { AppStateType } from "../../redux/redux-store";
+import React from "react";
 
 const mapStateToProps = (state: AppStateType) => {
     return {

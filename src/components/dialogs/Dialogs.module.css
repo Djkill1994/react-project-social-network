@@ -1,7 +1,6 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
-
 }
 
 .dialogsItems {
@@ -9,8 +8,7 @@
     font-size: 23px;
 }
 
-
-.dialog a.activeLink  {
+.dialog a.activeLink {
     color: #bbbb2e;
 }
 
@@ -18,23 +16,18 @@
     width: 30px;
     height: 30px;
     border-radius: 30px;
-
 }
 
-.dialog a{
+.dialog a {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .messages {
     padding: 10px;
 }
 
-.message {
-
-}
-
-.inputMessage{
+.inputMessage {
     padding-top: 50px;
     display: flex;
     align-items: baseline;

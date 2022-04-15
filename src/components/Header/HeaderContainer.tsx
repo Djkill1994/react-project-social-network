@@ -1,8 +1,8 @@
 import React from "react";
-import Header, { DispatchPropsType, MapPropsType } from "./Header";
+import Header, {DispatchPropsType, MapPropsType} from "./Header";
 import {logout} from "../../redux/auth-reducer";
 import {connect} from "react-redux";
-import { AppStateType } from "../../redux/redux-store";
+import {AppStateType} from "../../redux/redux-store";
 
 class HeaderContainer extends React.Component<MapPropsType & DispatchPropsType> {
     render() {
@@ -16,4 +16,4 @@ const mapStateToProps = (state: AppStateType) => ({
 })
 
 export default connect<MapPropsType, DispatchPropsType, {}, AppStateType>(mapStateToProps,
-  {logout})(HeaderContainer);
+    {logout})(HeaderContainer);

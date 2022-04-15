@@ -7,11 +7,10 @@
     width: 20px;
 }
 
-.info{
+.info {
     display: flex;
     flex-direction: column;
 }
-
 
 .userName {
     font-size: 40px;
@@ -19,24 +18,23 @@
     margin: auto;
 }
 
-.avatar{
+.avatar {
     margin-left: 270px;
 }
 
-
-.status{
+.status {
     font-weight: bold;
 }
 
-.status:hover{
+.status:hover {
     cursor: pointer;
     box-shadow: 1px 1px 1px 1px black;
 }
 
-.infoBlock{
+.infoBlock {
     margin-left: 10px;
 }
 
-.infoDate{
+.infoDate {
     padding-left: 10px;
 }

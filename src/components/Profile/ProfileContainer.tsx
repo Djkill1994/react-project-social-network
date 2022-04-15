@@ -2,10 +2,10 @@ import React from "react";
 import Profile from "./Profile";
 import {connect} from "react-redux";
 import {getStatus, getUserProfile, savePhoto, saveProfile, updateStatus} from "../../redux/profile-reducer";
-import { RouteComponentProps, withRouter } from "react-router-dom";
+import {RouteComponentProps, withRouter} from "react-router-dom";
 import {compose} from "redux";
-import { AppStateType } from "../../redux/redux-store";
-import { ProfileType } from "../../types/types";
+import {AppStateType} from "../../redux/redux-store";
+import {ProfileType} from "../../types/types";
 
 type MapPropsType = ReturnType<typeof mapStateToProps>
 
@@ -25,7 +25,7 @@ type PropsType = MapPropsType & DispatchPropsType & RouteComponentProps<PathPara
 
 class ProfileContainer extends React.Component<PropsType> {
 
-    refreshProfile(){
+    refreshProfile() {
         let userId: number | null = +this.props.match.params.userId;
         if (!userId) {
             userId = this.props.authorizedUserId;
@@ -33,9 +33,9 @@ class ProfileContainer extends React.Component<PropsType> {
         if (!userId) {
             this.props.history.push("/login")
         }
-        if (!userId){
+        if (!userId) {
             console.error("ID should exists in URI params or in state ('authorizedUserId')")
-        }else {
+        } else {
             this.props.getUserProfile(userId);
             this.props.getStatus(userId);
         }
@@ -45,8 +45,8 @@ class ProfileContainer extends React.Component<PropsType> {
         this.refreshProfile()
     }
 
-    componentDidUpdate(prevProps:PropsType, prevState: PropsType) {
-        if(this.props.match.params.userId != prevProps.match.params.userId){
+    componentDidUpdate(prevProps: PropsType, prevState: PropsType) {
+        if (this.props.match.params.userId != prevProps.match.params.userId) {
             this.refreshProfile()
         }
     }

@@ -11,7 +11,6 @@ type StateType = {
     status: string
 }
 
-// Local store применяем
 class ProfileStatus extends React.Component<PropsType, StateType> {
     state = {
         editMode: false,
@@ -36,8 +35,8 @@ class ProfileStatus extends React.Component<PropsType, StateType> {
         });
     };
 
-    componentDidUpdate(prevProps: PropsType, prevState: StateType, snapshot:any) {
-        if(prevProps.status !== this.props.status){
+    componentDidUpdate(prevProps: PropsType, prevState: StateType, snapshot: any) {
+        if (prevProps.status !== this.props.status) {
             this.setState({
                 status: this.props.status
             })
