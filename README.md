@@ -1,5 +1,7 @@
 Pet project of a social network, made according to the course of IT-Kamasutra.com Way of Samrai 1.0 , Way of Samrai 1.0, React js.
 
+You can view the application here: https://djkill1994.github.io/react-project-social-network/#/react-project-social-network/profile
+
 Tech stack of this project: 
 1. React js, 
 2. Typescript,
