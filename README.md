@@ -20,14 +20,3 @@ In this project, the following was implemented:
 10. A hash router was used to navigate the social network when deploying to github pages,
 11. Implemented captcha,
 12. Implemented pagination
-
-
-
-Functionality implementation screenshots:
-![](C:/Users/djkil/Pictures/Screenshots/Снимок экрана (43).png)
-![](C:/Users/djkil/Pictures/Screenshots/Снимок экрана (44).png)
-![](C:/Users/djkil/Pictures/Screenshots/Снимок экрана (45).png)
-![](C:/Users/djkil/Pictures/Screenshots/Снимок экрана (46).png)
-![](C:/Users/djkil/Pictures/Screenshots/Снимок экрана (47).png)
-![](C:/Users/djkil/Pictures/Screenshots/Снимок экрана (48).png)
-![](C:/Users/djkil/Pictures/Screenshots/Снимок экрана (49).png)
